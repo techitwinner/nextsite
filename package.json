@@ -11,13 +11,18 @@
   "dependencies": {
     "@nextui-org/react": "^2.3.5",
     "antd": "^5.16.4",
+    "clsx": "^2.1.1",
     "flowbite-react": "^0.9.0",
-    "framer-motion": "^11.1.5",
-    "next": "14.2.2",
+    "framer-motion": "^11.1.7",
+    "mini-svg-data-uri": "^1.4.4",
+    "next": "^14.2.3",
     "primereact": "^10.6.3",
     "react": "^18",
+    "react-aria": "^3.32.1",
     "react-dom": "^18",
-    "react-router-dom": "^6.22.3"
+    "react-fontawesome": "^1.7.1",
+    "react-router-dom": "^6.22.3",
+    "tailwind-merge": "^2.3.0"
   },
   "devDependencies": {
     "@types/node": "^20",

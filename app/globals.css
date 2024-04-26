@@ -31,7 +31,19 @@
   background-attachment: scroll;
 }
 
+.snapp {
+  text-align: center;
+  scroll-snap-type: y mandatory;
+  scroll-padding: 10px;
+  overflow-y: scroll;
+}
 
+.snapc {
+  scroll-snap-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 
