@@ -49,7 +49,7 @@ const ResourcesPage = () => {
   return (
     <div className="w-full justify-center flex flex-col items-center">
             <section className="py-24 min-h-screen w-full px-6 flex flex-col max-w-[1024px] gap-8 items-start">
-        <h1 className="text-5xl font-black">Things used to construct this website.</h1>
+        <h1 id="tools-used" className="text-5xl font-black">Things used to construct this website.</h1>
         <div className="grid grid-cols-1 gap-4">
             {usedTools.map((tools, index) => (
                 <div className="w-full h-auto" key={index}>
@@ -87,7 +87,7 @@ const ResourcesPage = () => {
         </div>
       </section>
       <section className="py-24 min-h-screen w-full px-6 flex flex-col max-w-[1024px] gap-8 items-start">
-        <h1 className="text-5xl font-black">Recommended UNIX-like Distros</h1>
+        <h1 id="unixlike" className="text-5xl font-black">Recommended UNIX-like Distros</h1>
         <div className="grid grid-cols-1 gap-4">
             {recommendedLinux.map((dist, index) => (
                 <div className="w-full" key={index}>

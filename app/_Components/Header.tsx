@@ -14,7 +14,6 @@ const Header = () => {
     { id: "contact", name: "Contact", link: "/contact", icoFamily: "solid", ico: "envelope" },
   ];
   
-  // const ActiveOrNot = (link: string) => window.location.pathname === link;
   const ActiveOrNot = (link: string) => {
     const currentUrl = new URL(window.location.href);
     const targetUrl = new URL(link, window.location.origin);
