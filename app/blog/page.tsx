@@ -1,31 +1,46 @@
-"use client";
+import { getAllPosts } from "@/app/functions/getAllPosts";
+import { Article } from "@/app/lib/types";
+import Feed from "@/app/components/Feed";
+import HeroSection from "../components/HeroSection";
+import axios, { AxiosResponse } from 'axios';
+import { sendSlackMessage } from "@/app/functions/sendSlackMessage";
 
-import { useEffect } from 'react';
-import {Link} from "@nextui-org/react"
 
-const RedirectPage = ({ redirectUrl }: { redirectUrl: string }) => {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.location.href = redirectUrl;
+const HomePage = async ({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | undefined };
+}) => {
+  const page = Number(searchParams.page) || 1;
+  const publishedPosts: Article[] = await getAllPosts();
+
+  // Send a message to Slack when the page is accessed
+  const message = {
+    text: `Someone visited the homepage! Page: ${page}`,
+  };
+
+  try {
+    await sendSlackMessage(message);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error('Error sending Slack message:', error.message);
+      // Handle the error as needed
+    } else {
+      console.error('An unexpected error occurred:', error);
+      // Handle other types of errors or log them
     }
-  }, [redirectUrl]);
+  }
 
-  return null;
-};
-
-const MyPage = () => {
   return (
-
-        <div className="w-full justify-center flex flex-col items-center">
-                <RedirectPage redirectUrl="https://blog.techit.win/" />
-        <section className="py-24 min-h-screen w-full px-6 flex flex-col max-w-[1024px] gap-8 items-start">
-          <h1 className="text-5xl font-black">/blog is deprecated</h1>
-          <h1 className="text-5xl font-black">Redirecting to <Link className="text-5xl" href="https://blog.techit.win">blog.techit.win</Link></h1>
-          <div className="grid grid-cols-1 gap-4">
-          </div>
-        </section>
+    <>
+      <div className="">
+        <HeroSection />
+        <div className="mt-4 max-w-[1024px] m-auto px-6 py-20 min-h-screen">
+          <Feed articles={publishedPosts} />
+        </div>
       </div>
+    </>
   );
 };
 
-export default MyPage;
+export default HomePage;
