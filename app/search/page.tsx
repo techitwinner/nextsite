@@ -1,7 +1,7 @@
-import { getAllPosts } from "@/functions/getAllPosts";
-import { Article } from "@/lib/types";
-import Search from "../../components/Search";
-import { calculateTagFrequency } from "@/functions/getAllTags";
+import { getAllPosts } from "@/app/functions/getAllPosts";
+import { Article } from "@/app/lib/types";
+import Search from "@/app/components/Search";
+import { calculateTagFrequency } from "@/app/functions/getAllTags";
 
 const SearchPage = async () => {
   const publishedPosts: Article[] = await getAllPosts();

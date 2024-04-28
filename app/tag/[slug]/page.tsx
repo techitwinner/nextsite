@@ -1,8 +1,8 @@
-import Search from "@/components/Search";
-import { getAllPosts } from "@/functions/getAllPosts";
-import { calculateTagFrequency } from "@/functions/getAllTags";
-import { getTagFilteredPosts } from "@/functions/tagFilteredPosts";
-import { Article } from "@/lib/types";
+import Search from "@/app/components/Search";
+import { getAllPosts } from "@/app/functions/getAllPosts";
+import { calculateTagFrequency } from "@/app/functions/getAllTags";
+import { getTagFilteredPosts } from "@/app/functions/tagFilteredPosts";
+import { Article } from "@/app/lib/types";
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
