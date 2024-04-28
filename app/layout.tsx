@@ -35,6 +35,7 @@ export default function RootLayout({ children }: Readonly <{ children: React.Rea
 return (
     <html lang="en" className={colorScheme}>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
         <script src="https://kit.fontawesome.com/fad05709e1.js" crossOrigin="anonymous" async></script>
       </head>
       <body className={inter.className}>
