@@ -2,6 +2,7 @@ import { Article } from '@/app/lib/types';
 import slugify from 'slugify';
 import getLocalizedDate from '@/app/utils/getLocalizedDate';
 import {Chip,Link,Card,Divider,CardFooter,CardHeader} from "@nextui-org/react";
+import Image from "next/image"
 
 type Props = {
   article: Article;
@@ -17,7 +18,7 @@ export default function ArticleCard({ article }: Props) {
       <Card className="flex flex-col overflow-hidden cursor-pointer group">
         <CardHeader className="flex flex-col gap-3 items-start">
           <div className=" filter contrast-[0.9]">
-            <img
+            <Image
               className="object-cover w-full transition rounded-lg aspect-video group-hover:opacity-90 bg-gray-50"
               src={article.coverImage}
               alt={'article cover'}
