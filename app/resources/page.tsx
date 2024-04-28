@@ -42,10 +42,11 @@ const ResourcesPage = () => {
     return <div>Error: {error.message}</div>;
   }
 
-  const HandleButtonClick = (link: string) => {
-    window.location.href = link;
+  const handleButtonClick = (link: string) => {
+    if (typeof window !== 'undefined') {
+      window.location.href = link;
+    }
   };
-
   return (
     <div className="w-full justify-center flex flex-col items-center">
             <section className="py-24 min-h-screen w-full px-6 flex flex-col max-w-[1024px] gap-8 items-start">

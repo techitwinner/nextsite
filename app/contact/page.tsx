@@ -7,7 +7,9 @@ import { AuroraBackground } from "@/app/_Components/AuroraBackground";
 
 const HomePage = () => {
   const handleButtonClick = (link: string) => {
-    window.location.href = link;
+    if (typeof window !== 'undefined') {
+      window.location.href = link;
+    }
   };
   return (
     <AuroraBackground>
@@ -30,8 +32,9 @@ const HomePage = () => {
             </section>      
           </section>
           <section className="gap-2 flex flex-row">
-            <Button onClick={() => handleButtonClick("/projects")} size="md" color="primary" variant="shadow">Projects</Button>
-            <Button onClick={() => handleButtonClick("/about")} size="md">About Me</Button>
+            <Button onClick={() => handleButtonClick("mailto://techit@dailitation.xyz")} size="md" color="primary" variant="shadow">E-mail</Button>
+            <Button onClick={() => handleButtonClick("https://twitter.com/techitttttt")} size="md">X (Twitter)</Button>
+            <Button onClick={() => handleButtonClick("https://github.com/techittttt")} size="md">GitHub</Button>
           </section>
         </section>        
       </motion.div>

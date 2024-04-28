@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import { useRouter } from 'next/navigation';
 import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, NavbarContent ,Link, Button, Avatar,Tooltip} from "@nextui-org/react";
 
@@ -15,13 +15,21 @@ const Header = () => {
   ];
   
   const ActiveOrNot = (link: string) => {
-    const currentUrl = new URL(window.location.href);
-    const targetUrl = new URL(link, window.location.origin);
-    return currentUrl.pathname === targetUrl.pathname;
-    };
-
+    const [isActive, setIsActive] = React.useState(false);
+  
+    useEffect(() => {
+      const currentUrl = new URL(window.location.href);
+      const targetUrl = new URL(link, window.location.origin);
+      setIsActive(currentUrl.pathname === targetUrl.pathname);
+    }, [link]);
+  
+    return isActive;
+  };
+  
   const handleButtonClick = (link: string) => {
-    window.location.href = link;
+    if (typeof window !== 'undefined') {
+      window.location.href = link;
+    }
   };
 
   return (

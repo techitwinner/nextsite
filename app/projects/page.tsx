@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import {Card, CardHeader, CardBody, CardFooter, Divider, Link, Image, Button, Checkbox, Chip} from "@nextui-org/react";
 
 
-const ResourcesPage = () => {
+const ProjectPage = () => {
 
   const [personalProjects, setPersonalProjects] = useState(null);
   const [usedTools, setUsedTools] = useState(null);
@@ -24,8 +24,6 @@ const ResourcesPage = () => {
 
         setPersonalProjects(jsonData1);
         setUsedTools(jsonData2);
-      } catch (err) {
-        setError(err);
       } finally {
         setIsLoading(false);
       }
@@ -38,18 +36,16 @@ const ResourcesPage = () => {
     return <div>Loading...</div>;
   }
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-
-  const HandleButtonClick = (link: string) => {
-    window.location.href = link;
+  const handleButtonClick = (link: string) => {
+    if (typeof window !== 'undefined') {
+      window.location.href = link;
+    }
   };
 
   return (
     <div className="w-full justify-center flex flex-col items-center">
       <section className="py-24 min-h-screen w-full px-6 flex flex-col max-w-[1024px] gap-8 items-start">
-        <h1 id="unixlike" className="text-5xl font-black">Recommended UNIX-like Distros</h1>
+        <h1 id="unixlike" className="text-5xl font-black">Projects</h1>
         <div className="grid grid-cols-1 gap-4">
             {personalProjects.map((project, index) => (
                 <div className="w-full" key={index}>
@@ -75,20 +71,17 @@ const ResourcesPage = () => {
                     <section>
                       <section className="py-6 flex flex-col gap-2 justify-center h-full">
                         <section className="gap-2 flex flex-row">
-                          <p><strong>Recommended for:</strong></p>
-                            {project.type.map((type, index) => (
+                          <p><strong>Category:</strong></p>
+                            {project.type.map((type:string, index:string) => (
                               <Chip size="sm" key={index}>{type}</Chip>
                             ))}
-                        </section>
-                        <section className="flex flex-row items-center gap-2">
-                          <p><strong>Community Support:</strong></p><Checkbox isDisabled color="primary" defaultSelected={dist.community_support ? true : false}></Checkbox>  
                         </section>
                           <Link
                             isExternal
                             showAnchorIcon
-                            href={dist.homepage}
+                            href={project.homepage}
                           >
-                            Visit {dist.name}
+                            Visit {project.name}
                           </Link>
                       </section>
                     </section>
@@ -100,4 +93,4 @@ const ResourcesPage = () => {
   );
 };
 
-export default ResourcesPage;
+export default ProjectPage;

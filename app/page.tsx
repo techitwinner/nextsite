@@ -7,7 +7,9 @@ import { AuroraBackground } from "./_Components/AuroraBackground";
 
 const HomePage = () => {
   const handleButtonClick = (link: string) => {
-    window.location.href = link;
+    if (typeof window !== 'undefined') {
+      window.location.href = link;
+    }
   };
   return (
     <AuroraBackground>
