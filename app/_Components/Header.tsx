@@ -7,8 +7,8 @@ import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Navba
 const Header = () => {
   const menuItems = [
     { id: "home", name: "Home", link: "/", icoFamily: "solid", ico: "house"},
-    { id: "blog", name: "Blog", link: "/blog", icoFamily: "solid", ico: "comment-dots" },
     { id: "articles", name: "Articles", link: "/blog/articles", icoFamily: "solid", ico: "newspaper" },
+    { id: "certs", name: "Certificates", link: "/certificates", icoFamily: "solid", ico: "certificate" },
     { id: "resources", name: "Resources", link: "/resources", icoFamily: "solid", ico: "box" },
     { id: "projects", name: "Projects", link: "/projects", icoFamily: "solid", ico: "code" },
     { id: "about", name: "About", link: "/about", icoFamily: "solid", ico: "circle-info" },
