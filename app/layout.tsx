@@ -1,12 +1,12 @@
 'use client';
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Barlow } from "next/font/google";
 import "./globals.css";
 import Header from "@/app/_Components/Header";
 import Footer from "@/app/_Components/Footer"
 import React, {useEffect,useState} from 'react';
 
-const inter = Inter({ subsets: ["latin"] });
+const barlow = Barlow({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]});
 
 export default function RootLayout({ children }: Readonly <{ children: React.ReactNode; }>) {
 
@@ -38,7 +38,7 @@ return (
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://kit.fontawesome.com/fad05709e1.js" crossOrigin="anonymous" async></script>
       </head>
-      <body className={inter.className}>
+      <body className={barlow.className}>
         <Header/>       
         {children}
         <Footer/>
