@@ -14,12 +14,12 @@ export default function ArticleCard({ article }: Props) {
   const formattedTime = getLocalizedDate(article.date);
 
   return (
-    <Link color={"foreground"} href={`/blog/articles/${slug}?id=${article.id}`}>
+    <Link color={"foreground"} href={`/blog/${slug}?id=${article.id}`}>
       <Card className="flex flex-col overflow-hidden cursor-pointer group">
         <CardHeader className="flex flex-col gap-3 items-start">
           <div className=" filter contrast-[0.9]">
-            <Image
-              className="object-cover w-full transition rounded-lg aspect-video group-hover:opacity-90 bg-gray-50"
+            <img
+              className="object-cover w-full transition rounded-lg aspect-video group-hover:opacity-90"
               src={article.coverImage}
               alt={'article cover'}
             />
