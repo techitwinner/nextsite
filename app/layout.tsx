@@ -34,15 +34,16 @@ export default function RootLayout({ children }: Readonly <{ children: React.Rea
 
 return (
     <html lang="en" className={colorScheme}>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="Welcome to techit.win! This is where I keep all of my certificates, show off my projects, posting blog posts and more."/>
         <script src="https://kit.fontawesome.com/fad05709e1.js" crossOrigin="anonymous" async></script>
-      </head>
-      <body className={barlow.className}>
-        <Header/>       
-        {children}
-        <Footer/>
-      </body>
+    </head>
+    <body className={barlow.className}>
+    <Header/>
+    {children}
+    <Footer/>
+    </body>
     </html>
-  );
+);
 }
