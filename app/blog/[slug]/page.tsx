@@ -13,8 +13,6 @@ import { Article } from "@/app/lib/types";
 import getLocalizedDate from '@/app/utils/getLocalizedDate';
 import { getTagFilteredPosts } from "@/app/functions/articleFilteredPosts";
 import SocialshareButtons from "@/app/components/SocialshareButtons";
-import Image from "next/image";
-
 export default async function Page({
   searchParams,
 }: {
@@ -40,7 +38,7 @@ export default async function Page({
 
   return (
     <div className="space-y-5 max-w-7xl m-auto min-h-screen">
-      <Image alt="" className="object-cover w-full h-52 xl:rounded-[20px] aspect-video" src={postDetails.coverImage} />
+      <img alt="" className="object-cover w-full h-52 xl:rounded-[20px] aspect-video" src={postDetails.coverImage} />
       <div>
         <div className="text-center space-y-5 text-sm mx-auto mt-3">
           <div className="tracking-tight sm:text-4xl font-black">
