@@ -8,9 +8,12 @@ export default function Footer() {
     const currentYear = getCurrentYear();
     return (
         <React.Fragment>
-            <div className="flex flex-col z-40 py-2 px-6 w-full items-center justify-center inset-x-0 border-t border-divider backdrop-blur-lg data-[menu-open=true]:backdrop-blur-xl backdrop-saturate-150 bg-background/70 fixed bottom-0">
-                <p className="text-[12px] dark:text-white text-black"><strong>© 2023-{currentYear} — Techit Thawiang</strong> All right reserved.</p>
-                <p className="text-[12px] dark:text-white text-black">Any trademarks or logos used on this website are property of their respective owner.</p>
+            <div className="flex flex-col z-40 w-full items-center justify-center inset-x-0 border-t border-divider">
+                <div className="w-[1024px] py-2 px-6 ">
+                    <p className="dark:text-white text-black"><strong>© 2023-{currentYear} — Techit Thawiang</strong> All right reserved.</p>
+                    <p className="dark:text-white text-black">Any trademarks or logos used on this website are property
+                        of their respective owner.</p>
+                </div>
             </div>
         </React.Fragment>
     );
