@@ -56,7 +56,7 @@ const ProjectPage = () => {
       <section className="py-8 md:py-24 min-h-screen w-full px-6 flex flex-col max-w-[1024px] gap-8 items-start">
         <h1 id="unixlike" className="text-5xl font-black">Projects</h1>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 w-full">
-            {personalProjects.map((project, index) => (
+            {(personalProjects ?? []).map((project:any, index) => (
                 <div className="card" key={index}>
                     <section className="card-header">
                         <img
