@@ -71,7 +71,6 @@ const ProjectPage = () => {
                         </div>
                     </section>
                     <hr/>
-
                   <section className="card-content gap-4">
                     <p className="text-md">{project.description}</p>
                   </section>
