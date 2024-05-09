@@ -44,6 +44,30 @@
     outline: none;
 }
 
+.card.sa {
+    transition: 0.2s all;
+    padding: 12px 16px;
+    border: 2px solid rgba(var(--color-border));
+    border-radius: 12px;
+    box-shadow: 0px 4px 0px 0px rgba(var(--color-border));
+    -moz-box-shadow: 0px 4px 0px 0px rgba(var(--color-border));
+    -webkit-box-shadow: 0px 4px 0px 0px rgba(var(--color-border));
+}
+
+.card.sa:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 8px 0px 0px rgba(var(--color-border));
+    -moz-box-shadow: 0px 8px 0px 0px rgba(var(--color-border));
+    -webkit-box-shadow: 0px 8px 0px 0px rgba(var(--color-border));
+}
+
+.card.sa:active {
+    transform: translateY(4px);
+    box-shadow: 0px 0px 0px 0px rgba(var(--color-border));
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(var(--color-border));
+    -moz-box-shadow: 0px 0px 0px 0px rgba(var(--color-border));
+}
+
 .card.click:hover {
     transform: translateY(-4px);
     box-shadow: 0px 8px 0px 0px rgba(var(--color-border));

@@ -16,7 +16,7 @@ export default function RootLayout({
                 <title>Techit&apos;s Home</title>
                 <script src="https://kit.fontawesome.com/fad05709e1.js" async crossOrigin="anonymous"></script>
             </head>
-            <body className="ubuntu-sans">
+            <body className="ubuntu-sans" style={{scrollBehavior:'smooth'}}>
                 <Header/>
                 <div className="md:pl-[68px] flex justify-center">
                     {children}
