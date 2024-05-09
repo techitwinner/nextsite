@@ -28,20 +28,21 @@ const Search = ({
 
   return (
     <>
-      <div className="mb-5">
+      <div className="mb-5 w-full">
         <Input
+          className="search"
           placeholder={slug ? `Search in #${normalizedSlug}` : "Search Articles"}
           value={searchValue}
           onChange={(e) => setSearchValue(e.target.value)}
         />
       </div>
 
-      <div className="mb-5">
+      <div className="mb-5 self-start">
         <Tags tagFrequencyMap={tagFrequencyMap} />
       </div>
 
       {!filteredBlogPosts.length && (
-        <p className="text-gray-500 text-center">No posts found.</p>
+        <p className="text-center">No posts found.</p>
       )}
 
       <Feed articles={filteredBlogPosts} />

@@ -1,0 +1,6 @@
+.chip {
+    padding: 2px 12px;
+    font-size: 16px;
+    border-radius: 100px;
+    background-color: rgba(var(--color-border));
+}

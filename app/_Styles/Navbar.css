@@ -1,0 +1,18 @@
+.nav-right {
+    border-right: 2px solid rgba(var(--color-border));
+}
+
+.nav-top {
+    border-top: 2px solid rgba(var(--color-border));
+}
+
+.vertical-text {
+    writing-mode: vertical-rl; /* Set the writing mode to vertical */
+    text-orientation: upright; /* Ensure text is oriented upright */
+}
+
+.degree90-48px {
+    width: 48px;
+    transform: rotate(270deg);
+    display: inline-block;
+}

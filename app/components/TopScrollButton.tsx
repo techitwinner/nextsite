@@ -1,6 +1,5 @@
 "use client";
 
-import { Button } from "@/app/components/button";
 import useScrollToTop from "@/app/hook/useScrollToTop";
 import { MoveUp } from "lucide-react";
 
@@ -8,14 +7,14 @@ const ScrollToTopButton = () => {
   const { showTopButton, scrollToTop } = useScrollToTop();
 
   return (
-    <Button
-      className={`fixed bottom-8 right-4 transition-opacity duration-300 rounded-full px-2 py-3 ${
+    <button
+      className={`ghost fixed bottom-4 right-4 duration-300 rounded-full p-2 ${
         showTopButton ? "opacity-100" : "opacity-0"
       }`}
       onClick={scrollToTop}
     >
       <MoveUp />
-    </Button>
+    </button>
   );
 };
 

@@ -8,12 +8,12 @@ const Articles = async () => {
   const tagFrequencyMap = await calculateTagFrequency({ publishedPosts });
 
   return (
-    <div className="max-w-5xl m-auto p-4 min-h-screen">
-      <Search
-        publishedPosts={publishedPosts}
-        tagFrequencyMap={tagFrequencyMap}
-      />
-    </div>
+      <div className={"flex flex-col w-full min-h-screen items-center px-4 py-8 max-w-[1024px] self-center"}>
+          <Search
+              publishedPosts={publishedPosts}
+              tagFrequencyMap={tagFrequencyMap}
+          />
+      </div>
   );
 };
 

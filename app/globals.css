@@ -1,75 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=optional?v=2000');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap?v=2000');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap?v=2000');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap?v=2000');
+@import '_Styles/_import.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    --background-start-rgb: 0, 23, 31;
+    --background-end-rgb: 0, 23, 31;
+    --color-accent: 255, 102, 102;
+    --color-border: 55, 70, 79;
+    --color-accent-dark: 202, 69, 69;
 }
 
-.text-b1 {
-  text-shadow: rgb(255, 255, 255) 1px 0px 0px, rgb(255, 255, 255) 0.540302px 0.841471px 0px, rgb(255, 255, 255) -0.416147px 0.909297px 0px, rgb(255, 255, 255) -0.989992px 0.14112px 0px, rgb(255, 255, 255) -0.653644px -0.756802px 0px, rgb(255, 255, 255) 0.283662px -0.958924px 0px, rgb(255, 255, 255) 0.96017px -0.279415px 0px;
+*:focus {
+    outline: none;
 }
 
-.text-b2 {
-  text-shadow: rgb(255, 255, 255) 2px 0px 0px, rgb(255, 255, 255) 1.75517px 0.958851px 0px, rgb(255, 255, 255) 1.0806px 1.68294px 0px, rgb(255, 255, 255) 0.141474px 1.99499px 0px, rgb(255, 255, 255) -0.832294px 1.81859px 0px, rgb(255, 255, 255) -1.60229px 1.19694px 0px, rgb(255, 255, 255) -1.97998px 0.28224px 0px, rgb(255, 255, 255) -1.87291px -0.701566px 0px, rgb(255, 255, 255) -1.30729px -1.5136px 0px, rgb(255, 255, 255) -0.421592px -1.95506px 0px, rgb(255, 255, 255) 0.567324px -1.91785px 0px, rgb(255, 255, 255) 1.41734px -1.41108px 0px, rgb(255, 255, 255) 1.92034px -0.558831px 0px;
+.ubuntu-sans {
+    font-family: "Ubuntu Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+            "wdth" 100;
+    font-size: inherit;
 }
 
-.bg-grid {
-  background-image: url("http://files.techit.win/wp-content/uploads/2024/04/grid.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
+.nunito {
+     font-family: "Nunito", sans-serif;
+     font-optical-sizing: auto;
+     font-style: normal;
 }
 
-.snapp {
-  text-align: center;
-  scroll-snap-type: y mandatory;
-  scroll-padding: 10px;
-  overflow-y: scroll;
+.noto-color-emoji-regular {
+    font-family: "Noto Color Emoji", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    user-select: none;
+    font-size: 4.5rem/* 72px */;
+    line-height: 1;
 }
-
-.snapc {
-  scroll-snap-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
 
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-.backdrop-blur {
-  /* From https://css.glass */
-  background: rgba(0, 0, 0, 0.75);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(0, 0, 0, 0.75);
+    color: rgb(var(--foreground-rgb));
+    background: rgba(var(--background-end-rgb));
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+html {
+    font-size: 20px;
 }

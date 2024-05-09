@@ -37,7 +37,7 @@ export default async function Page({
   const tagPosts: Article[] = await getTagFilteredPosts({ tags, slug: String(slug) });
 
   return (
-    <div className="space-y-5 max-w-7xl m-auto min-h-screen">
+    <div className="space-y-5 max-w-5xl m-auto min-h-screen">
       <img alt="" className="object-cover w-full h-52 xl:rounded-[20px] aspect-video" src={postDetails.coverImage} />
       <div>
         <div className="text-center space-y-5 text-sm mx-auto mt-3">
@@ -52,9 +52,9 @@ export default async function Page({
               {postDetails.author}
             </div>
             <SocialshareButtons
-        shareUrl={`http://localhost:3000/${postDetails.slug}?id=${postDetails.id}`}
-        title={postDetails.title}
-      />
+              shareUrl={`http://techit.win/blog/${postDetails.slug}?id=${postDetails.id}`}
+              title={postDetails.title}
+            />
           </div>
 
 
@@ -65,11 +65,12 @@ export default async function Page({
         <div className="max-w-[1024px] px-6 py-8 mx-auto mb-24 mt-6 space-y-8 bg-white rounded-xl overflow-clip">
           <NotionRenderer blockMap={blockMap}/>
         </div>
-        <div className="py-12 border-t">
+        <hr/>
+        <div className="py-12">
           <Container>
             <div className="flex items-center justify-between my-8">
               <div className="text-3xl font-bold">Latest articles</div>
-              <Link href="/articles">
+              <Link href="/blog">
                 <span className="font-semibold cursor-pointer">
                   More articles ➜
                 </span>

@@ -1,94 +1,91 @@
 "use client";
 
 import React, {useState,useEffect} from "react";
-import { useRouter } from 'next/navigation';
-import {Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, NavbarContent ,Link, Button, Avatar,Tooltip} from "@nextui-org/react";
+import {motion} from "framer-motion";
 
 const Header = () => {
-  const menuItems = [
-    { id: "home", name: "Home", link: "/", icoFamily: "solid", ico: "house"},
-    { id: "blog", name: "Blog", link: "/blog", icoFamily: "solid", ico: "comment-dots" },
-    { id: "certs", name: "Certificates", link: "/certificates", icoFamily: "solid", ico: "certificate" },
-    { id: "resources", name: "Resources", link: "/resources", icoFamily: "solid", ico: "box" },
-    { id: "projects", name: "Projects", link: "/projects", icoFamily: "solid", ico: "code" },
-    { id: "about", name: "About", link: "/about", icoFamily: "solid", ico: "circle-info" },
-    { id: "contact", name: "Contact", link: "/contact", icoFamily: "solid", ico: "envelope" },
-  ];
-  
-  const ActiveOrNot = (link: string) => {
-    const [isActive, setIsActive] = React.useState(false);
-  
-    useEffect(() => {
-      const currentUrl = new URL(window.location.href);
-      const targetUrl = new URL(link, window.location.origin);
-      setIsActive(currentUrl.pathname === targetUrl.pathname);
-    }, [link]);
-  
-    return isActive;
-  };
-  
-  const handleButtonClick = (link: string) => {
-    if (typeof window !== 'undefined') {
-      window.location.href = link;
-    }
-  };
 
-  return (
-    <React.Fragment>
-        <Navbar disableAnimation isBordered className="fixed">
-        <NavbarContent className="sm:hidden pr-3" justify="start">
-            <NavbarBrand>
-            <p className="font-bold text-inherit text-2xl">Techit Thawiang</p>
-            </NavbarBrand>
-        </NavbarContent>
+    const sidebarItems =  [
+        {"name": "Home", "url": "/", "ico": "house"},
+        {"name": "Blog", "url": "/blog", "ico": "chat"},
+        {"name": "Projects", "url": "/projects", "ico": "work"},
+    ]
 
-        <NavbarContent className="hidden sm:flex gap-4" justify="start">
-            <NavbarBrand className="gap-3">
-            <p className="font-bold text-inherit text-2xl">Techit Thawiang</p>
-            </NavbarBrand>
-        </NavbarContent>
+    const ActiveOrNot = (link: string) => {
+        const [isActive, setIsActive] = React.useState(false);
 
-        <NavbarContent className="hidden md:flex gap-2" justify="end">
-            {menuItems.map((item, index) => (
-                <Tooltip showArrow content={item.name} key={`${item}-${index}`}>
-                    <Button
-                    isIconOnly={!ActiveOrNot(item.link)}
-                    className={ActiveOrNot(item.link) ? "font-bold" : "font-regular" }
-                    onClick={() => handleButtonClick(item.link)}
-                    color={ActiveOrNot(item.link) ? "primary" : "default"}
-                    variant={ActiveOrNot(item.link) ? "shadow" : "flat"}
-                    >
-                    <i className={`fa-${item.icoFamily} fa-${item.ico}`}></i>
-                    <p className={ActiveOrNot(item.link) ? "flex" : "hidden"}>{item.name}</p>
-                    </Button>
-                </Tooltip>
-            ))}
-        </NavbarContent>
+        useEffect(() => {
+            const currentUrl = new URL(window.location.href);
+            const targetUrl = new URL(link, window.location.origin);
+            setIsActive(currentUrl.pathname === targetUrl.pathname);
+        }, [link]);
 
-        <NavbarContent className="sm:hidden" justify="end">
-            <NavbarMenuToggle />
-        </NavbarContent>
+        return isActive;
+    };
 
-        <NavbarMenu>
-            {menuItems.map((item, index) => (
-            <NavbarMenuItem key={`${item}-${index}`}>
-                <Link
-                className="w-full"
-                size="lg"
-                onClick={() => handleButtonClick(item.link)}
-                color={ActiveOrNot(item.link) ? "primary" : "foreground" }
-                underline={ActiveOrNot(item.link) ? "always" : "none" }
-                >
-                {item.name}
-                </Link>
-            </NavbarMenuItem>
-            ))}
-        </NavbarMenu>
+    const handleButtonClick = (link: string) => {
+        if (typeof window !== 'undefined') {
+            window.location.href = link;
+        }
+    };
 
-        </Navbar>     
-    </React.Fragment>
+    return (
+        <React.Fragment>
+            <motion.div
+                initial={{x: -63}} // Start off-canvas to the left
+                animate={{x: 0}} // Move into the viewport
+                exit={{x: -63}}
+                transition={{duration: 0.5, ease: "easeOut",}}
+                style={{width: "63px"}} // Set the desired width
+                className="top-0 fixed hidden md:flex flex-col h-screen w-fit gap-5 p-2 justify-between items-center z-50 bg-[rgba(var(--background-start-rgb))]
+                nav-right"
+            >
+                <section className="flex flex-col gap-2">
+                    <img alt="" className="rounded-full image press"
+                         src="https://images.techit.win/custom/381373437_878368530383292_1922118991557438707_n.jpg"
+                         width="48px" height="48px"/>
+                    <hr/>
+                    <section className="flex flex-col gap-2">
+                        {sidebarItems.map((item, index) => (
+                            <button key={`${item}-${index}`}
+                                    data-toggle="tooltip" data-placement="right" title={item.name}
+                                    onClick={() => handleButtonClick(item.url)}
+                                    className={ActiveOrNot(item.url) ? "select-none nav active flex items-center font-bold" : "select-none ghost nav flex items-center font-regular"}>
+                                <span className="material-symbols-rounded">{item.ico}</span>
+                            </button>
+                        ))}
+                    </section>
+                </section>
+                <section className="flex flex-col gap-2">
+                    <img alt="" className="select-none"
+                    tabIndex={-1}
+                         src="https://images.techit.win/custom/TechitT.svg"
+                         width="48px" height="48px"/>
 
-  );
+                </section>
+            </motion.div>
+            <motion.div
+                initial={{y: 63}} // Start off-canvas to the left
+                animate={{y: 0}} // Move into the viewport
+                exit={{y: 63}}
+                transition={{duration: 0.5, ease: "easeOut"}}
+                className="bottom-0 fixed flex md:hidden flex-row w-full h-fit gap-5 p-2 items-center nav-top z-50 bg-[rgba(var(--background-start-rgb))]"
+            >
+                <section className="flex flex-row gap-2 justify-center w-full">
+                    <section className="flex flex-row gap-2">
+                        {sidebarItems.map((item, index) => (
+                            <button key={`${item}-${index}`}
+                                    data-toggle="tooltip" data-placement="right" title={item.name}
+                                    onClick={() => handleButtonClick(item.url)}
+                                    className={ActiveOrNot(item.url) ? "select-none nav active flex items-center font-bold" : "select-none ghost nav flex items-center font-regular"}>
+                                <span className="material-symbols-rounded">{item.ico}</span>
+                            </button>
+                        ))}
+                    </section>
+                </section>
+            </motion.div>
+        </React.Fragment>
+    )
 }
 
 export default Header
