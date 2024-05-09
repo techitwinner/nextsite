@@ -1,4 +1,4 @@
-import { Article } from "@/lib/types";
+import { Article } from "@/app/lib/types";
 
 export function filterArticles(articles: Article[], selectedTag: string | null): Article[] {
   return articles
