@@ -26,10 +26,10 @@ export default function ArticleCard({ article }: Props) {
       <section className="gap-3 items-start card-header">
         <div className='flex flex-col gap-2'>
           <div className=" filter contrast-[0.9]">
-            <img
+            <Image
               className="object-cover w-full transition rounded-lg aspect-video group-hover:opacity-90"
               src={article.coverImage}
-              alt={'article cover'}
+              alt=""
             />
           </div>
           <div className="flex flex-row gap-1">
