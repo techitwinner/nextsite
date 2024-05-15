@@ -88,10 +88,6 @@ export default function Home() {
                         <h1 className="font-bold">Located in:</h1>
                         <p className="mono">Thailand</p>
                     </div>
-                    <div className="card sa">
-                        <h1 className="font-bold">Located in:</h1>
-                        <p className="mono">Thailand</p>
-                    </div>
                 </section>
             </div>
             <div id="contact" className={"flex flex-col gap-4 justify-center min-h-screen py-24 w-full"}>
