@@ -33,17 +33,19 @@ export default function RootLayout({ children }: Readonly <{ children: React.Rea
 
     return (
         <html lang="en" className={colorScheme}>
-        <head>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-            <meta name="description"
-                  content="Welcome to techit.win! This is where I keep all of my certificates, show off my projects, posting blog posts and more."/>
-            <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
-        </head>
-        <body className={notoSans.className}>
-        <Providers>
-        {children}
-        </Providers>
-        </body>
+            <head>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <meta name="description"
+                      content="Welcome to techit.win! This is where I keep all of my certificates, show off my projects, posting blog posts and more."/>
+                <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+            </head>
+            <body className={`${notoSans.className} flex flex-col items-center justify-center`}>
+                <main className="max-w-[64rem]">
+                    <Providers>
+                        {children}
+                    </Providers>
+                </main>
+            </body>
         </html>
     );
 }
