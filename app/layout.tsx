@@ -1,12 +1,10 @@
 'use client';
 import type { Metadata } from "next";
-import { Barlow } from "next/font/google";
+import { Noto_Sans } from "next/font/google";
 import "./globals.css";
-import Header from "@/app/_Components/Header";
-import Footer from "@/app/_Components/Footer"
 import React, {useEffect,useState} from 'react';
 
-const barlow = Barlow({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]});
+const notoSans = Noto_Sans({ subsets: ["latin"]});
 
 export default function RootLayout({ children }: Readonly <{ children: React.ReactNode; }>) {
 
@@ -34,16 +32,14 @@ export default function RootLayout({ children }: Readonly <{ children: React.Rea
 
 return (
     <html lang="en" className={colorScheme}>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="description" content="Welcome to techit.win! This is where I keep all of my certificates, show off my projects, posting blog posts and more."/>
-        <script src="https://kit.fontawesome.com/fad05709e1.js" crossOrigin="anonymous" async></script>
-    </head>
-    <body className={barlow.className}>
-    <Header/>
-    {children}
-    <Footer/>
-    </body>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <meta name="description" content="Welcome to techit.win! This is where I keep all of my certificates, show off my projects, posting blog posts and more."/>
+            <script src="https://kit.fontawesome.com/fad05709e1.js" crossOrigin="anonymous" async></script>
+        </head>
+        <body className={notoSans.className}>
+            {children}
+        </body>
     </html>
 );
 }
