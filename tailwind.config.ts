@@ -1,7 +1,12 @@
 import type { Config } from "tailwindcss";
+import {nextui} from "@nextui-org/react";
+
+const { addDynamicIconSelectors } = require('@iconify/tailwind');
 
 const config: Config = {
-  content: ["./pages/**/*.{js,ts,jsx,tsx,mdx}",
+  content: [
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
@@ -32,6 +37,8 @@ const config: Config = {
   },
   darkMode: "class",
   plugins: [
+    nextui(),
+    addDynamicIconSelectors(),
   ]
 };
 
