@@ -4,7 +4,7 @@ import {Inter,Inter_Tight} from "next/font/google";
 import "./globals.css";
 import React, {useEffect,useState} from 'react';
 import {Providers} from "@/app/providers";
-import {Navigator} from "@/app/_MainComponents";
+import {Footer, Navigator} from "@/app/_MainComponents";
 
 const font = Inter({ subsets: ["latin"]});
 
@@ -48,6 +48,7 @@ export default function RootLayout({ children }: Readonly <{ children: React.Rea
                         {children}
                     </Providers>
                 </main>
+            <Footer/>
             </body>
         </html>
     );
