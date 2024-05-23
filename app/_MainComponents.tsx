@@ -31,7 +31,7 @@ const handleButtonClick = (link: string) => {
     }
 };
 
-
+const day = new Date();
 
 const Navigator = () => {
     return (
@@ -71,7 +71,15 @@ const Navigator = () => {
 const Footer = () => {
     return (
         <React.Fragment>
-
+            <div className="w-full items-center justify-center">
+                <section
+                    className="py-2 flex flex-row h-full justify-center items-center border-t-2 border-black border-opacity-15 dark:border-white dark:border-opacity-15">
+                    <nav className="flex flex-col max-w-[64rem] px-4 sm:px-8 w-full justify-center items-center">
+                        <p className="text-[12px]">© 2023-{day.getFullYear()} Techit Thawiang. All rights reserved.</p>
+                        <p className="text-[12px]">Any logos or trademarks appearing on this site are the property of their respective owners.</p>
+                    </nav>
+                </section>
+            </div>
         </React.Fragment>
     );
 }
