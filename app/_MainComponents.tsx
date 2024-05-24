@@ -72,7 +72,7 @@ const Navigator = () => {
                         </ul>
                         <ul className="hidden sm:flex flex-row gap-2">
                             {navigatorContents().map((nav, index) => (
-                                <Tooltip key={index} showArrow={currentPath === nav.url} content={nav.label}
+                                <Tooltip key={index} showArrow={currentPath !== nav.url} content={nav.label}
                                          className={currentPath === nav.url ? "hidden" : "flex"} placement="bottom">
                                     <Button
                                         onClick={() => handleButtonClick(nav.url)}
