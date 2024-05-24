@@ -7,7 +7,8 @@ import {Image} from "@nextui-org/react";
 const socialItems = () => [
     {"label": "GitHub", "website": "https://github.com/", "username": "techitwinner", "icon": "github-logo"},
     {"label": "X / Twitter", "website": "https://x.com/", "username": "techitwinner", "icon": "x-logo"},
-    {"label": "Facebook", "website": "https://facebook.com/", "username": "techitwinner", "icon": "facebook-logo"}
+    {"label": "Facebook", "website": "https://facebook.com/", "username": "techitwinner", "icon": "facebook-logo"},
+    {"label": "LinkedIn", "website": "https://linkedin.com/", "username": "in/techit-thawiang-02b56b27a", "icon": "linkedin-logo"}
 ];
 
 const handleButtonClick = (link: string) => {
@@ -55,7 +56,7 @@ const Home = () => {
 
                 <section className="gap-2 flex">
                     <Button radius="sm" color="primary" onClick={() => handleButtonClick("/about")}>About Me</Button>
-                    <Button radius="sm" variant="faded" onClick={() => handleButtonClick("/blog")}>Blog</Button>
+                    <Button radius="sm" variant="faded" onClick={() => handleButtonClick("/contact")}>Contact Me</Button>
                 </section>
             </div>
         </div>)
