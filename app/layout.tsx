@@ -39,7 +39,7 @@ export default function RootLayout({ children }: Readonly <{ children: React.Rea
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
                 <meta name="description"
                       content="Welcome to techit.win! This is where I keep all of my certificates, show off my projects, posting blog posts and more."/>
-                <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+                <script src="https://unpkg.com/@phosphor-icons/web@2.1.1" async></script>
             </head>
             <body className={`${font.className} flex flex-col items-center`}>
             <Navigator/>
