@@ -37,9 +37,8 @@ const Navigator = () => {
 
     const navigatorContents = () => [
         {"label": "Home", "url": "/", "icon": "house"},
-        {"label": "Blog", "url": "/blog", "icon": "chat-teardrop-text"},
         {"label": "About Me", "url": "/about", "icon": "user-circle"},
-        {"label": "Contact Me", "url": "/contact", "icon": "phone"},
+        {"label": "Contact", "url": "/contact", "icon": "phone"},
     ];
 
     const offCanvasMenuToggle = () => [
