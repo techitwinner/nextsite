@@ -43,13 +43,13 @@ export default function RootLayout({ children }: Readonly <{ children: React.Rea
                 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1" async></script>
             </head>
             <body className={`${font.className} flex flex-col items-center`}>
-            <Navigator/>
-                <main className="max-w-[64rem] w-full px-4 sm:px-8 flex flex-col">
-                    <Providers>
-                        {children}
-                    </Providers>
-                </main>
-            <Footer/>
+                <Navigator/>
+                    <main className="max-w-[64rem] w-full px-4 sm:px-8 flex flex-col">
+                        <Providers>
+                            {children}
+                        </Providers>
+                    </main>
+                <Footer/>
             </body>
         </html>
     );
