@@ -37,7 +37,23 @@ const config: Config = {
   },
   darkMode: "class",
   plugins: [
-    nextui(),
+    nextui({
+      themes: {
+        dark: {
+          colors: {
+            primary: {
+              DEFAULT: "#FF6666",
+              foreground: "#000000",
+            },
+            secondary: {
+              DEFAULT: "#6666FF",
+              foreground: "#000000",
+            },
+            focus: "#FF6666",
+          },
+        },
+      },
+    }),
     addDynamicIconSelectors(),
   ]
 };
