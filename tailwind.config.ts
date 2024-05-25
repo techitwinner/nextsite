@@ -39,6 +39,19 @@ const config: Config = {
   plugins: [
     nextui({
       themes: {
+        light: {
+          colors: {
+            primary: {
+              DEFAULT: "#FF6666",
+              foreground: "#FFFFFF",
+            },
+            secondary: {
+              DEFAULT: "#6666FF",
+              foreground: "#FFFFFF",
+            },
+            focus: "#FF6666",
+          },
+        },
         dark: {
           colors: {
             primary: {
