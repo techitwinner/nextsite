@@ -28,19 +28,24 @@ const Navigator = () => {
     };
 
     const menuVariants = {
-        open: { opacity: 1 },
-        closed: { opacity: 0 },
+        enter: { y: 0, opacity: 1 },
+        leave: { y: "100%", opacity: 1 },
     };
 
-    const menuTransition = {
-        open: { ease: 'easeOut', duration: 0.3 },
-        closed: { ease: 'easeIn', duration: 0.3 },
-    };
+    const menuTransition = {type: "spring",  bounce: 0, duration: .5};
 
     const navigatorContents = () => [
         {"label": "Home", "url": "/", "icon": "house"},
         {"label": "About Me", "url": "/about", "icon": "user-circle"},
         {"label": "Contact", "url": "/contact", "icon": "phone"},
+    ];
+
+    const navigatorContentsOffCanvas = () => [
+        {"label": "Home", "url": "/"},
+        {"label": "Blog", "url": "/blog"},
+        {"label": "Projects", "url": "/projects"},
+        {"label": "About Me", "url": "/about"},
+        {"label": "Contact", "url": "/contact"},
     ];
 
     const offCanvasMenuToggle = () => [
@@ -49,68 +54,48 @@ const Navigator = () => {
 
     return (
         <React.Fragment>
-            <div className="fixed w-full h-[64px] z-[9999]">
-                <section className="flex flex-row h-full justify-center items-center backdrop-blur border-b-2 border-black border-opacity-15 dark:border-white dark:border-opacity-15 bg-white dark:bg-black bg-opacity-70 dark:bg-opacity-70">
-                    <nav className="flex flex-row max-w-[64rem] px-4 sm:px-8 w-full justify-between items-center">
-                        <section>
-                            <p className={`${interTight.className} text-2xl font-bold hover:font-black active:font-normal transition-all cursor-pointer select-none`}
-                               onClick={() => handleButtonClick("/")}>Techit Thawiang</p>
-                        </section>
-                        <ul className="flex sm:hidden flex-row gap-2">
-                            {offCanvasMenuToggle().map((toggle, index) => (
-                                <Button
-                                    key="index"
-                                    onClick={toggleMyStupidMobileMenu}
-                                    className="flex flex-row max-h-[40px]"
-                                    isIconOnly
-                                    size={"md"}
-                                    variant={isOpen ? "solid" : "ghost"}
-                                    color={isOpen ? "danger" : "default"}
-                                    radius={isOpen ? "full" : "sm"}
-                                >
-                                    <p className={`ph ${isOpen ? `ph-${toggle.iconAlt}` : `ph-${toggle.icon}`} text-[1.25rem]`}></p>
-                                </Button>
-                            ))}
-                        </ul>
-                        <ul className="hidden sm:flex flex-row gap-2">
-                            {navigatorContents().map((nav, index) => (
-                                <Tooltip key={index} showArrow={currentPath !== nav.url} content={nav.label}
-                                         className={currentPath === nav.url ? "hidden" : "flex"} placement="bottom">
+                <div className="fixed w-full h-[64px] z-[9999]">
+                    <section
+                        className="flex flex-row h-full justify-center items-center backdrop-blur border-b-2 border-black border-opacity-15 dark:border-white dark:border-opacity-15 bg-white dark:bg-black bg-opacity-70 dark:bg-opacity-70">
+                        <nav className="flex flex-row max-w-[64rem] px-4 sm:px-8 w-full justify-between items-center">
+                            <section>
+                                <p className={`${interTight.className} text-2xl font-bold hover:font-black active:font-normal transition-all cursor-pointer select-none`}
+                                   onClick={() => handleButtonClick("/")}>Techit Thawiang</p>
+                            </section>
+                            <ul className="flex flex-row gap-2">
+                                {offCanvasMenuToggle().map((toggle, index) => (
                                     <Button
-                                        onClick={() => handleButtonClick(nav.url)}
+                                        key="index"
+                                        onClick={toggleMyStupidMobileMenu}
                                         className="flex flex-row max-h-[40px]"
-                                        isIconOnly={currentPath !== nav.url}
-                                        size="md"
-                                        variant={currentPath === nav.url ? "solid" : "ghost"}
-                                        color={currentPath === nav.url ? "primary" : "default"}
-                                        radius={currentPath === nav.url ? "full" : "sm"}
+                                        isIconOnly
+                                        size={"md"}
+                                        variant={isOpen ? "solid" : "ghost"}
+                                        color={isOpen ? "danger" : "default"}
+                                        radius={isOpen ? "full" : "sm"}
                                     >
-                                        <p className={`ph ph-${nav.icon} text-[1.25rem] ${currentPath === nav.url ? 'ph-fill' : ''}`}></p>
-                                        <p className={currentPath === nav.url ? "flex" : "hidden"}>
-                                            {nav.label}
-                                        </p>
+                                        <p className={`ph ${isOpen ? `ph-${toggle.iconAlt}` : `ph-${toggle.icon}`} text-[1.25rem]`}></p>
                                     </Button>
-                                </Tooltip>
-                            ))}
-                        </ul>
-                    </nav>
-                </section>
-            </div>
+                                ))}
+                            </ul>
+                        </nav>
+                    </section>
+                </div>
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        className={`${isOpen ? 'fixed' : 'hidden'} z-[9998] flex w-screen h-screen backdrop-blur bg-white dark:bg-black bg-opacity-70 dark:bg-opacity-70 gap-2 pt-20 justify-center`}
-                        initial="closed"
-                        animate="open"
-                        exit="closed"
-                        variants={menuVariants}
+                        className={`${isOpen ? 'fixed' : 'hidden transition-background'} z-[9998] scrollbar-hide flex w-screen h-screen gap-2 pt-20 justify-center overflow-auto`}
+                        initial="leave"
+                        animate="enter"
+                        exit="leave"
+                        variants={{enter: {y: 0, opacity: 1}, leave: {y: "5%", opacity: 0},}}
                         transition={menuTransition}
                     >
-                        <nav className="flex flex-col max-w-[64rem] w-full gap-2 px-4 sm:px-8">
-                            {navigatorContents().map((nav, index) => (
+                        <nav className="flex flex-col max-w-[64rem] w-full gap-2 px-6 sm:px-8 items-end">
+                            {navigatorContentsOffCanvas().map((nav, index) => (
                                 <Link key={index}
                                       href={nav.url}
-                                      className="text-5xl font-bold gap-2"
+                                      className="text-5xl sm:text-7xl gap-2"
                                       color={currentPath === nav.url ? "primary" : "foreground"}
                                 >
                                     {nav.label}
@@ -118,6 +103,19 @@ const Navigator = () => {
                             ))}
                         </nav>
 
+                    </motion.div>
+                )}
+            </AnimatePresence>
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        className={`${isOpen ? 'fixed backdrop-blur' : 'hidden transition-background backdrop-blur-0'} z-[9997] flex w-screen h-screen bg-white dark:bg-black bg-opacity-70 dark:bg-opacity-70`}
+                        initial="leave"
+                        animate="enter"
+                        exit="leave"
+                        variants={{enter: {opacity: 1}, leave: {opacity: 0},}}
+                        transition={menuTransition}
+                    >
                     </motion.div>
                 )}
             </AnimatePresence>
