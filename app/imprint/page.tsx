@@ -38,8 +38,7 @@ const Legal = () => {
                 <p>This website may contain trademarks owned by third parties. The use of these trademarks does not
                     imply any affiliation with or endorsement by the respective trademark owners.</p>
                 <ul>
-                    <li>Facebook and the Facebook logo are trademarks of Meta Platforms, Inc.</li>
-                    <li>Instagram and the Instagram logo are trademarks of Meta Platforms, Inc.</li>
+                    <li>techit.win are trademark of Techit Thawiang</li>
                 </ul>
                 <p>All other trademarks appearing on this website are the property of their respective owners.</p>
 
