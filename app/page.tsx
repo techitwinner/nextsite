@@ -53,7 +53,6 @@ const Home = () => {
                 </section>
             </div>
             <div className="flex flex-col gap-2">
-
                 <section className="gap-2 flex">
                     <Button radius="sm" color="primary" onClick={() => handleButtonClick("/about")}>About Me</Button>
                     <Button radius="sm" variant="faded" onClick={() => handleButtonClick("/contact")}>Contact Me</Button>
