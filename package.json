@@ -13,8 +13,13 @@
     "@iconify-json/mdi-light": "^1.1.10",
     "@iconify/tailwind": "^1.1.1",
     "@nextui-org/react": "^2.3.6",
+    "axios": "^1.7.2",
     "framer-motion": "^11.2.4",
-    "next": "^14.2.3"
+    "next": "^14.2.3",
+    "rehype-stringify": "^10.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.0",
+    "unified": "^11.0.4"
   },
   "devDependencies": {
     "@types/node": "^20",

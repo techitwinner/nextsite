@@ -208,13 +208,4 @@ const Footer = () => {
     );
 }
 
-const ImageContainer = ({ src, alt, className }) => (
-    <div
-        className={`bg-cover bg-center ${className}`}
-        style={{ backgroundImage: `url(${src})` }}
-        aria-label={alt}
-        role="img"
-    ></div>
-);
-
-export {Navigator, Footer, ImageContainer};
+export {Navigator, Footer};
