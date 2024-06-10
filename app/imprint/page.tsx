@@ -3,7 +3,7 @@ const Legal = () => {
         <div className="min-h-screen py-24 flex flex-col gap-16">
             <div className=" flex flex-col items-start gap-6">
                 <h1 className="text-5xl font-bold">Imprint</h1>
-                <p>Last edited: May 25th, 2024 at 2:00PM</p>
+                <p>Last edited: June 10th, 2024 at 7:32 PM</p>
                 <p>This Imprint section provides important legal information about this personal portfolio website and
                     its content. As a visitor, please review the following details carefully.</p>
             </div>
@@ -39,6 +39,10 @@ const Legal = () => {
                     imply any affiliation with or endorsement by the respective trademark owners.</p>
                 <ul>
                     <li>techit.win are trademark of Techit Thawiang</li>
+                    <li>LinkedIn are trademark of LinkedIn Corp.</li>
+                    <li>GitHub are trademark of GitHub Inc.</li>
+                    <li>X are trademark of X Corp.</li>
+                    <li>Facebook are trademark of Meta Platforms, Inc.</li>
                 </ul>
                 <p>All other trademarks appearing on this website are the property of their respective owners.</p>
 
