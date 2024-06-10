@@ -42,27 +42,27 @@ const config: Config = {
         light: {
           colors: {
             primary: {
-              DEFAULT: "#FF6666",
+              DEFAULT: "#000000",
               foreground: "#FFFFFF",
             },
             secondary: {
-              DEFAULT: "#6666FF",
+              DEFAULT: "#666666",
               foreground: "#FFFFFF",
             },
-            focus: "#FF6666",
+            focus: "#000000",
           },
         },
         dark: {
           colors: {
             primary: {
-              DEFAULT: "#FF6666",
+              DEFAULT: "#FFFFFF",
               foreground: "#000000",
             },
             secondary: {
-              DEFAULT: "#6666FF",
-              foreground: "#000000",
+              DEFAULT: "#999999",
+              foreground: "#666666",
             },
-            focus: "#FF6666",
+            focus: "#FFFFFF",
           },
         },
       },

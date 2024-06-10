@@ -19,6 +19,7 @@ const handleButtonClick = (link: string) => {
 
 const Home = () => {
     const pfpSize = "200px"
+
     return (
         <div className="h-screen flex flex-col justify-evenly items-start gap-6">
             <div className="flex flex-col justify-center items-start gap-8">

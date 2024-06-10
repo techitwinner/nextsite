@@ -40,9 +40,6 @@ const Attributions = () => {
                                     radius="sm">
                                 TailwindCSS
                             </Button>
-                            <Button onClick={() => handleButtonClick("https://eslint.org")} variant="ghost" radius="sm">
-                                ESLint
-                            </Button>
                         </div>
                     </li>
                     <li className="flex flex-col">
@@ -80,10 +77,6 @@ const Attributions = () => {
                             <Button onClick={() => handleButtonClick("https://rsms.me/inter/")} variant="ghost"
                                     radius="sm">
                                 Inter
-                            </Button>
-                            <Button onClick={() => handleButtonClick("https://fonts.google.com/specimen/Inter+Tight")}
-                                    variant="ghost" radius="sm">
-                                Inter Tight
                             </Button>
                             <Button onClick={() => handleButtonClick("https://evilmartians.com/products/martian-mono")}
                                     variant="ghost" radius="sm">

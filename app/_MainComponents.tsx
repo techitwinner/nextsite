@@ -16,7 +16,7 @@ const handleButtonClick = (link: string) => {
 
 const day = new Date();
 
-const logoUrl = "https://images.techit.win/logos/techit.win/TechitDotWinLogo.png"
+const logoUrl = "https://images.techit.win/logos/techit.win/TechitDotWin-Squarcle-Auto.svg"
 
 const Navigator = () => {
     const currentPath = usePathname();
@@ -59,7 +59,7 @@ const Navigator = () => {
                         className="flex flex-row h-full justify-center items-center backdrop-blur border-b-2 border-black border-opacity-15 dark:border-white dark:border-opacity-15 bg-white dark:bg-black bg-opacity-70 dark:bg-opacity-70">
                         <nav className="flex flex-row max-w-[64rem] px-4 sm:px-8 w-full justify-between items-center">
                             <section>
-                                <p className={`${interTight.className} text-2xl font-bold hover:font-black active:font-normal transition-all cursor-pointer select-none`}
+                                <p className={`text-2xl font-bold cursor-pointer select-none`}
                                    onClick={() => handleButtonClick("/")}>Techit Thawiang</p>
                             </section>
                             <ul className="flex flex-row gap-2">
@@ -95,8 +95,8 @@ const Navigator = () => {
                             {navigatorContentsOffCanvas().map((nav, index) => (
                                 <Link key={index}
                                       href={nav.url}
-                                      className="text-5xl sm:text-7xl gap-2"
-                                      color={currentPath === nav.url ? "primary" : "foreground"}
+                                      className={`text-5xl sm:text-7xl gap-2 ${currentPath === nav.url ? "font-bold" : "font-regular"}`}
+                                      color={currentPath === nav.url ? "primary" : "secondary"}
                                 >
                                     {nav.label}
                                 </Link>
@@ -173,7 +173,7 @@ const Footer = () => {
                                             <Link key={index}
                                                   href={legal.url}
                                                   underline={`${currentPath === legal.url ? "always" : "none"}`}
-                                                  color={`${currentPath === legal.url ? "primary" : "foreground"}`}
+                                                  color={`${currentPath === legal.url ? "primary" : "secondary"}`}
                                                   className="select-none cursor-pointer"
                                             >
                                                 {legal.label}
@@ -191,7 +191,7 @@ const Footer = () => {
                                         {socialSection().map((social, index) => (
                                             <Link key={index}
                                                   href={`${social.website}${social.username}`}
-                                                  color="foreground"
+                                                  color="secondary"
                                                   className="select-none cursor-pointer"
                                             >
                                                 {social.label}

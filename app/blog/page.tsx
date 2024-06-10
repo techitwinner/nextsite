@@ -27,7 +27,6 @@ const handleButtonClick = (link: string) => {
 
 export default async function BlogPage() {
     const blogs = await fetchBlogs()
-    console.log('blogs', blogs)
 
     return (
         <div className="min-h-screen py-24 flex flex-col gap-16">
