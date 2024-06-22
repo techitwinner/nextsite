@@ -102,7 +102,6 @@ const Navigator = () => {
                                 </Link>
                             ))}
                         </nav>
-
                     </motion.div>
                 )}
             </AnimatePresence>
