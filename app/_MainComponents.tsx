@@ -56,7 +56,7 @@ const Navigator = () => {
         <React.Fragment>
                 <div className="fixed w-full h-[64px] z-[9999]">
                     <section
-                        className="flex flex-row h-full justify-center items-center backdrop-blur border-b-2 border-black border-opacity-15 dark:border-white dark:border-opacity-15 bg-white dark:bg-black bg-opacity-70 dark:bg-opacity-70">
+                        className="flex flex-row h-full justify-center items-center backdrop-blur border-b-1 border-black border-opacity-15 dark:border-white dark:border-opacity-15 bg-white dark:bg-black bg-opacity-70 dark:bg-opacity-70">
                         <nav className="flex flex-row max-w-[64rem] px-4 sm:px-8 w-full justify-between items-center">
                             <section>
                                 <p className={`text-2xl font-bold cursor-pointer select-none`}
@@ -140,7 +140,7 @@ const Footer = () => {
 
     return (
         <React.Fragment>
-            <div className="flex flex-col gap-6 w-full items-center justify-center border-t-2 border-black border-opacity-15 dark:border-white dark:border-opacity-15 py-10">
+            <div className="flex flex-col gap-6 w-full items-center justify-center border-t-1 border-black border-opacity-15 dark:border-white dark:border-opacity-15 py-10">
                 <section
                     className="flex flex-row h-full justify-center items-center max-w-[64rem] w-full">
                     <nav className="flex flex-row max-w-[64rem] px-4 sm:px-8 w-full justify-center items-stretch">
