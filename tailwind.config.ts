@@ -38,6 +38,18 @@ const config: Config = {
   darkMode: "class",
   plugins: [
     nextui({
+      layout: {
+        radius: {
+          small: "6px", // rounded-small
+          medium: "8px", // rounded-medium
+          large: "10px", // rounded-large
+        },
+        borderWidth: {
+          small: "1px", // border-small
+          medium: "1px", // border-medium
+          large: "1px", // border-large
+        },
+      },
       themes: {
         light: {
           colors: {
