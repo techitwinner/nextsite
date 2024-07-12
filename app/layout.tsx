@@ -5,13 +5,18 @@ import "./globals.css";
 import React, {useEffect,useState} from 'react';
 import {Providers} from "@/app/providers";
 import {Footer, Navigator} from "@/app/_MainComponents";
+import {usePathname} from "next/navigation";
 
 const font = Inter({ subsets: ["latin"]});
 
+const wideLayoutRoutes = ['/html-editor', '/future-wide-page', '/another-wide-page'];
 
 export default function RootLayout({ children }: Readonly <{ children: React.ReactNode; }>) {
 
   const [colorScheme, setColorScheme] = useState('light'); // Default to light mode
+
+    const pathname = usePathname();
+    const isWideLayout = wideLayoutRoutes.includes(pathname);
 
   useEffect(() => {
     // Function to handle color scheme change
@@ -46,7 +51,7 @@ export default function RootLayout({ children }: Readonly <{ children: React.Rea
             </head>
             <body className={`flex flex-col items-center`}>
                 <Navigator/>
-                    <main className="max-w-[64rem] w-full px-4 sm:px-8 flex flex-col">
+                    <main className={`max-w-[64rem] w-full px-4 sm:px-8 flex flex-col ${isWideLayout ? 'max-w-full' : 'max-w-[64rem]'}`}>
                         <Providers>
                             {children}
                         </Providers>

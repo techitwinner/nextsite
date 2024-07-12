@@ -66,7 +66,7 @@ export default async function Page({ params }) {
                 <p className="text-wrap">{attributes.summary}</p>
             </section>
             <section className="flex flex-col gap-3">
-                <div className="bg-amber-50 shadow-lg text-gray-900 dark:bg-gray-900 dark:text-amber-100 p-4 rounded-lg"
+                <div className="flex w-full flex-col gap-4"
                      dangerouslySetInnerHTML={{__html: contentHtml}}/>
             </section>
         </div>

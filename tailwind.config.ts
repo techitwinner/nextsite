@@ -40,9 +40,9 @@ const config: Config = {
     nextui({
       layout: {
         radius: {
-          small: "6px", // rounded-small
-          medium: "8px", // rounded-medium
-          large: "10px", // rounded-large
+          small: "4px", // rounded-small
+          medium: "6px", // rounded-medium
+          large: "8px", // rounded-large
         },
         borderWidth: {
           small: "1px", // border-small

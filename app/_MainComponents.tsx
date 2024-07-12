@@ -129,6 +129,7 @@ const Footer = () => {
     const legalSection = () => [
         {"label": "Imprint", "url": "/imprint"},
         {"label": "Attributions", "url": "/attributions"},
+        {"label": "HTML Editor", "url": "/html-editor"},
     ];
 
     const socialSection = () => [
@@ -157,8 +158,7 @@ const Footer = () => {
                     className="flex flex-row h-full justify-center items-center max-w-[64rem] w-full">
                     <nav className="flex flex-col sm:flex-row max-w-[64rem] px-4 sm:px-8 w-full justify-center items-stretch gap-2">
                         <section className="items-start flex flex-col w-full sm:w-[135%]">
-                            <p className={`${interTight.className} text-2xl font-bold select-none cursor-default`}>Techit
-                                Thawiang</p>
+                            <p className={`${interTight.className} text-2xl font-bold select-none cursor-default`}>Techit Thawiang</p>
                             <p>© 2023-{day.getFullYear()}, All rights reserved.</p>
                         </section>
                         <div className="grid grid-cols-2 sm:flex sm:flex-row w-full">
