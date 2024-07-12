@@ -71,8 +71,7 @@ const Navigator = () => {
                                         isIconOnly
                                         size={"md"}
                                         variant={isOpen ? "solid" : "ghost"}
-                                        color={isOpen ? "danger" : "default"}
-                                        radius={isOpen ? "full" : "sm"}
+                                        color={isOpen ? "primary" : "default"}
                                     >
                                         <p className={`ph ${isOpen ? `ph-${toggle.iconAlt}` : `ph-${toggle.icon}`} text-[1.25rem]`}></p>
                                     </Button>
@@ -108,7 +107,7 @@ const Navigator = () => {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        className={`${isOpen ? 'fixed backdrop-blur' : 'hidden transition-background backdrop-blur-0'} z-[9997] flex w-screen h-screen bg-white dark:bg-black bg-opacity-70 dark:bg-opacity-70`}
+                        className={`${isOpen ? 'fixed backdrop-blur' : 'hidden transition-all backdrop-blur-0'} z-[9997] flex w-screen h-screen bg-white dark:bg-black bg-opacity-70 dark:bg-opacity-70`}
                         initial="leave"
                         animate="enter"
                         exit="leave"
@@ -130,6 +129,8 @@ const Footer = () => {
         {"label": "Imprint", "url": "/imprint"},
         {"label": "Attributions", "url": "/attributions"},
         {"label": "HTML Editor", "url": "/html-editor"},
+        {"label": "Drop Files", "url": "https://drive.techit.win/s/drop"},
+        {"label": "Warehouse", "url": "https://drive.techit.win/s/warehouse"},
     ];
 
     const socialSection = () => [
@@ -167,7 +168,7 @@ const Footer = () => {
                                     <i className="text-2xl ph-bold ph-asterisk-simple self-start mt-1"></i>
                                     <section className="flex flex-col">
                                         <p className={`${interTight.className} flex flex-col md:flex-row text-2xl font-bold select-none cursor-default`}>
-                                            Legal</p>
+                                            Sites</p>
                                         {legalSection().map((legal, index) => (
                                             <Link key={index}
                                                   href={legal.url}
