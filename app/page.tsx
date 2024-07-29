@@ -26,7 +26,7 @@ const Home = () => {
                 <section>
                     <Image src="https://images.techit.win/custom/PFP/realtechit.jpg" height={pfpSize}
                            width={pfpSize}
-                           radius="sm"/>
+                    />
                 </section>
                 <section className="gap-2 flex-col flex">
                     <p className="font-bold text-5xl">Techit Thawiang</p>

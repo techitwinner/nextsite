@@ -41,8 +41,8 @@ const config: Config = {
       layout: {
         radius: {
           small: "4px", // rounded-small
-          medium: "6px", // rounded-medium
-          large: "8px", // rounded-large
+          medium: "8px", // rounded-medium
+          large: "12px", // rounded-large
         },
         borderWidth: {
           small: "1px", // border-small

@@ -1,13 +1,16 @@
 'use client';
 import type { Metadata } from "next";
-import {Inter,Inter_Tight} from "next/font/google";
+import {Noto_Sans, Noto_Sans_Thai} from "next/font/google";
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
+
 import "./globals.css";
 import React, {useEffect,useState} from 'react';
 import {Providers} from "@/app/providers";
 import {Footer, Navigator} from "@/app/_MainComponents";
 import {usePathname} from "next/navigation";
 
-const font = Inter({ subsets: ["latin"]});
+const fontTH = Noto_Sans_Thai({ subsets: ["latin"]});
 
 const wideLayoutRoutes = ['/html-editor', '/future-wide-page', '/another-wide-page'];
 
@@ -42,14 +45,12 @@ export default function RootLayout({ children }: Readonly <{ children: React.Rea
         <html lang="en" className={colorScheme}>
             <head>
                 <title>Techit&apos;s Home</title>
-                <link rel="preconnect" href="https://rsms.me/"/>
-                <link rel="stylesheet" href="https://rsms.me/inter/inter.css"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
                 <meta name="description"
                       content="Welcome to Techit's Home! This is where I keep all of my certificates, show off my projects and more."/>
                 <script src="https://unpkg.com/@phosphor-icons/web@2.1.1" async></script>
             </head>
-            <body className={`flex flex-col items-center`}>
+            <body className={`${GeistSans.className} flex flex-col items-center`}>
                 <Navigator/>
                     <main className={`max-w-[64rem] w-full px-4 sm:px-8 flex flex-col ${isWideLayout ? 'max-w-full' : 'max-w-[64rem]'}`}>
                         <Providers>
